@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+streamlit
+requests
+pydantic
+python-multipart
+aiofiles
+python-dotenv
+httpx
+plotly
+pandas

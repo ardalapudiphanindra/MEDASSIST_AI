@@ -1,0 +1,55 @@
+# Deployment configuration for AI Medical Prescription Verification System
+
+# AWS Deployment Configuration
+aws:
+  region: us-east-1
+  ec2_instance_type: t3.medium
+  security_groups:
+    - name: medical-app-sg
+      rules:
+        - port: 80
+          protocol: tcp
+          source: 0.0.0.0/0
+        - port: 443
+          protocol: tcp
+          source: 0.0.0.0/0
+        - port: 8000
+          protocol: tcp
+          source: 10.0.0.0/8
+        - port: 8501
+          protocol: tcp
+          source: 10.0.0.0/8
+
+# Azure Deployment Configuration
+azure:
+  resource_group: medical-prescription-rg
+  app_service_plan: medical-app-plan
+  location: East US
+  sku: B1
+
+# IBM Cloud Deployment Configuration
+ibm_cloud:
+  region: us-south
+  service_plan: lite
+  memory: 512M
+  instances: 1
+
+# Environment Variables for Production
+production_env:
+  - IBM_WATSON_API_KEY
+  - IBM_WATSON_URL
+  - HUGGINGFACE_API_TOKEN
+  - SECRET_KEY
+  - DATABASE_URL
+  - CORS_ORIGINS
+
+# Health Check Configuration
+health_checks:
+  backend:
+    endpoint: /health
+    timeout: 30
+    interval: 60
+  frontend:
+    endpoint: /
+    timeout: 30
+    interval: 60

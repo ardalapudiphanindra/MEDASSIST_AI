@@ -1,0 +1,50 @@
+[
+  {
+    "id": "prescription_001",
+    "patient_id": "P001",
+    "prescription_text": "Rx: Warfarin 5mg PO daily for atrial fibrillation. Monitor INR weekly initially, then monthly when stable. Target INR 2-3. Patient has history of hypertension, currently on Lisinopril 10mg daily.",
+    "patient_age": 72,
+    "patient_weight": 68.5,
+    "medical_history": ["Atrial fibrillation", "Hypertension"],
+    "allergies": [],
+    "current_medications": ["Lisinopril 10mg daily"],
+    "prescriber": "Dr. Smith",
+    "date": "2024-01-15"
+  },
+  {
+    "id": "prescription_002",
+    "patient_id": "P002", 
+    "prescription_text": "Rx: Metformin 500mg PO BID with meals for Type 2 DM. Start with 500mg daily x 1 week, then increase to BID. Monitor HbA1c in 3 months. Patient also prescribed Ibuprofen 400mg TID PRN for arthritis pain.",
+    "patient_age": 58,
+    "patient_weight": 85.0,
+    "medical_history": ["Type 2 Diabetes", "Osteoarthritis"],
+    "allergies": ["Penicillin"],
+    "current_medications": [],
+    "prescriber": "Dr. Johnson",
+    "date": "2024-01-16"
+  },
+  {
+    "id": "prescription_003",
+    "patient_id": "P003",
+    "prescription_text": "Rx: Aspirin 81mg PO daily for secondary prevention post-MI. Omeprazole 20mg daily for gastroprotection. Patient has history of GERD and recent myocardial infarction.",
+    "patient_age": 65,
+    "patient_weight": 75.0,
+    "medical_history": ["Myocardial infarction", "GERD", "Hyperlipidemia"],
+    "allergies": [],
+    "current_medications": ["Atorvastatin 40mg daily"],
+    "prescriber": "Dr. Williams",
+    "date": "2024-01-17"
+  },
+  {
+    "id": "prescription_004",
+    "patient_id": "P004",
+    "prescription_text": "Rx: Amoxicillin 500mg PO TID x 10 days for pneumonia. Patient is 8 years old, weight 25kg. No known allergies. Ensure adequate hydration.",
+    "patient_age": 8,
+    "patient_weight": 25.0,
+    "medical_history": ["Pneumonia"],
+    "allergies": [],
+    "current_medications": [],
+    "prescriber": "Dr. Brown",
+    "date": "2024-01-18"
+  }
+]

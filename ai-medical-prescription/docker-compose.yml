@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - IBM_WATSON_API_KEY=${IBM_WATSON_API_KEY}
+      - IBM_WATSON_URL=${IBM_WATSON_URL}
+      - HUGGINGFACE_API_TOKEN=${HUGGINGFACE_API_TOKEN}
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - medical-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - FASTAPI_URL=http://backend:8000
+    volumes:
+      - ./frontend:/app
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    depends_on:
+      - backend
+    networks:
+      - medical-network
+
+networks:
+  medical-network:
+    driver: bridge
